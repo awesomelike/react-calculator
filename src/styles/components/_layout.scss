@@ -1,0 +1,40 @@
+.layout {
+  background-image: url('/images/mojave.jpg');
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.layout__rectange {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.15));
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  min-height: 75vh;
+  height: 55rem;
+  width: 40rem;
+  box-shadow: -20px 8px 40px rgba(255, 255, 255, 0.20);
+}
+
+.layout__rectange:hover {
+  box-shadow: -20px 8px 40px rgba(255, 255, 255, 0.40);
+  transition: all .10s;
+}
+
+.table {
+  width: 100%;
+}
+
+.button-table {
+  width: 100%;
+}
+
+.text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
