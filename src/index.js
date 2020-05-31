@@ -24,28 +24,31 @@ const App = () => {
                 <td><input type="button" value="1" className="num-button"/></td>
                 <td><input type="button" value="2" className="num-button"/></td>
                 <td><input type="button" value="3" className="num-button"/></td>
-                <td><input type="button" value="/" className="num-button"/></td>
+                <td><input type="button" value="/" className="num-button operation"/></td>
               </tr>
               <tr>
                 <td><input type="button" value="4" className="num-button"/></td>
                 <td><input type="button" value="5" className="num-button"/></td>
                 <td><input type="button" value="6" className="num-button"/></td>
-                <td><input type="button" value="×" className="num-button"/></td>
+                <td><input type="button" value="×" className="num-button operation"/></td>
               </tr>
               <tr>
                 <td><input type="button" value="7" className="num-button"/></td>
                 <td><input type="button" value="8" className="num-button"/></td>
                 <td><input type="button" value="9" className="num-button"/></td>
-                <td><input type="button" value="+" className="num-button"/></td>
+                <td><input type="button" value="+" className="num-button operation"/></td>
               </tr>
               <tr>
                 <td><input type="button" value="+/-" className="num-button"/></td> 
                 <td><input type="button" value="0" className="num-button"/></td> 
                 <td><input type="button" value="." className="num-button"/></td> 
-                <td><input type="button" value="=" className="num-button"/></td> 
+                <td><input type="button" value="=" className="num-button operation"/></td> 
               </tr>
             </table>
           </tr>
+          {/* <div className="logo-container"> */}
+            <img src="logo192.png" alt="React" className="layout__logo"/>
+          {/* </div> */}
         </table>
       </div>
     </div>

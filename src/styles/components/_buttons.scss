@@ -5,18 +5,31 @@ input[type=button] {
 .num-button {
   width: 8rem;
   height: 10rem;
+  padding: 3px;
   border-radius: 1rem;
-  // border: none;
+  border: none;
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 25px;
   background-color: rgba(146, 146, 146, 0.527);
   color: rgb(236, 234, 234);
-  border: 1px solid rgba(146, 146, 146, 0.527);
+  font-family: 'Open Sans', sans-serif;
+  // transform: translateY(-0.5px);
+  transition: all .2s;
   &:focus {
     outline: none;
   }
+  &:hover {
+    background-color: rgba(99, 99, 99, 0.527);
+    // transform: translateY(0.5px);
+    transition: all .2s;
+  }
+}
+
+.operation {
+  @include button-op;
 }
 
 #c-key {
   width: 100%;
+  @include button-op;
 }
