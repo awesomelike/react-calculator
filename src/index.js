@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import './styles/main.scss'; 
 
-// Is this nice? GOOD JOB!!! You are senior developer! :) ☺ 
 const App = () => {
   return (
     <div className="layout">
