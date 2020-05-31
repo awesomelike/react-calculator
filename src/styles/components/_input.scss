@@ -1,3 +1,16 @@
-input[type=text] {
+input[type=input] {
   width: 100%;
+  background-color: rgba(146, 146, 146, 0.527);
+  border-radius: 1rem;
+  border: none;
+  height: 5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(236, 234, 234);
+  direction: rtl;
+  padding: 1rem;
+
+  &:focus {
+    outline: none;
+  }
 }

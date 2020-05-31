@@ -9,7 +9,7 @@
 }
 
 .layout__rectange {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.15));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.589), rgba(255, 255, 255, 0.15));
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
@@ -18,11 +18,12 @@
   height: 55rem;
   width: 40rem;
   box-shadow: -20px 8px 40px rgba(255, 255, 255, 0.20);
+  transition: all .8s;
 }
 
 .layout__rectange:hover {
   box-shadow: -20px 8px 40px rgba(255, 255, 255, 0.40);
-  transition: all .10s;
+  transition: all .8s;
 }
 
 .table {

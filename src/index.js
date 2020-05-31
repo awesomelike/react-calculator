@@ -10,39 +10,39 @@ const App = () => {
       <div className="layout__rectange">
         <table className="table">
           <tr>
-            <td><p>Calculation buffer</p></td>
+            <td><p className="buffer">Calculation buffer</p></td>
           </tr>
           <tr>
-            <td><input type="input" value="text"/></td>
+            <td><input type="input"/></td>
           </tr>
           <tr>
-            <td><input type="button" value="C"/></td>
+            <td><input type="button" value="C" className="num-button" id="c-key"/></td>
           </tr>
           <tr>
             <table className="button-table">
               <tr>
-                <td><input type="button" value="1"/></td>
-                <td><input type="button" value="2"/></td>
-                <td><input type="button" value="3"/></td>
-                <td><input type="button" value="/"/></td>
+                <td><input type="button" value="1" className="num-button"/></td>
+                <td><input type="button" value="2" className="num-button"/></td>
+                <td><input type="button" value="3" className="num-button"/></td>
+                <td><input type="button" value="/" className="num-button"/></td>
               </tr>
               <tr>
-                <td><input type="button" value="4"/></td>
-                <td><input type="button" value="5"/></td>
-                <td><input type="button" value="6"/></td>
-                <td><input type="button" value="×"/></td>
+                <td><input type="button" value="4" className="num-button"/></td>
+                <td><input type="button" value="5" className="num-button"/></td>
+                <td><input type="button" value="6" className="num-button"/></td>
+                <td><input type="button" value="×" className="num-button"/></td>
               </tr>
               <tr>
-                <td><input type="button" value="7"/></td>
-                <td><input type="button" value="8"/></td>
-                <td><input type="button" value="9"/></td>
-                <td><input type="button" value="+"/></td>
+                <td><input type="button" value="7" className="num-button"/></td>
+                <td><input type="button" value="8" className="num-button"/></td>
+                <td><input type="button" value="9" className="num-button"/></td>
+                <td><input type="button" value="+" className="num-button"/></td>
               </tr>
               <tr>
-                <td><input type="button" value="." /></td> 
-                <td><input type="button" value="0"/></td> 
-                <td><input type="button" value="="/></td> 
-                <td><input type="button" value="*"/></td> 
+                <td><input type="button" value="+/-" className="num-button"/></td> 
+                <td><input type="button" value="0" className="num-button"/></td> 
+                <td><input type="button" value="." className="num-button"/></td> 
+                <td><input type="button" value="=" className="num-button"/></td> 
               </tr>
             </table>
           </tr>

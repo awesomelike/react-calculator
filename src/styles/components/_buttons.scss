@@ -1,3 +1,22 @@
 input[type=button] {
   height: 100%;
 }
+
+.num-button {
+  width: 8rem;
+  height: 10rem;
+  border-radius: 1rem;
+  // border: none;
+  margin-top: 1rem;
+  font-size: 2rem;
+  background-color: rgba(146, 146, 146, 0.527);
+  color: rgb(236, 234, 234);
+  border: 1px solid rgba(146, 146, 146, 0.527);
+  &:focus {
+    outline: none;
+  }
+}
+
+#c-key {
+  width: 100%;
+}
