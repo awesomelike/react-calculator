@@ -46,9 +46,7 @@ const App = () => {
               </tr>
             </table>
           </tr>
-          {/* <div className="logo-container"> */}
-            <img src="logo192.png" alt="React" className="layout__logo"/>
-          {/* </div> */}
+          <img src="logo192.png" alt="React" className="layout__logo"/>
         </table>
       </div>
     </div>

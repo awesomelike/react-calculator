@@ -6,4 +6,7 @@
     background: $op-color-dark;
     transition: all .2s;
   }
+  &:active {
+    transform: translateY(2px);
+  }
 }
