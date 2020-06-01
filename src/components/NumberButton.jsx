@@ -1,8 +1,14 @@
 import React from 'react';
 
 const NumberButton = ({ number }) => {
+  const appendNumber = () => {
+    dispatchEvent()
+  }
+
   return (
-    <td><input type="button" value={number} className="num-button"/></td>
+    <td>
+      <input type="button" onClick={appendNumber} value={number} className="num-button"/>
+    </td>
   );
 };
 
