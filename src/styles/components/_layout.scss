@@ -21,8 +21,8 @@
   box-shadow: -20px 8px 40px rgba(255, 255, 255, 0.20);
   transition: all .8s;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 .layout__rectange:hover {
@@ -46,6 +46,7 @@
 }
 
 .table {
+  margin-top: 3rem;
   width: 100%;
 
 }
@@ -58,13 +59,4 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 3rem;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
 }
