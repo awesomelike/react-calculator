@@ -1,8 +1,13 @@
-export const appendNumber = (number) => ({
-  type: 'APPEND_NUMBER',
-  number
+export const appendSymbol = (symbol) => ({
+  type: 'APPEND_SYMBOL',
+  symbol,
+});
+
+export const setInput = (string) => ({
+  type: 'SET_INPUT',
+  string,
 });
 
 export const clearInput = () => ({
-  type: 'CLEAR_INPUT'
+  type: 'CLEAR_INPUT',
 });

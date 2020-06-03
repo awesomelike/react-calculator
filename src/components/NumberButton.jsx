@@ -1,20 +1,21 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import InputContext from '../context/inputContext';
-import StackContext from '../context/stackContext';
-import { appendNumber, clearInput } from '../actions/input';
+import BufferContext from '../context/bufferContext';
+import { appendSymbol, clearInput } from '../actions/input';
 
 const NumberButton = ({ number }) => {
-  const { dispatchInput, operationClicked, setOperationClicked } = useContext(InputContext);
-  const { dispatchStack } = useContext(StackContext);
-
+  const { dispatchInput, equalClicked, setEqualClicked } = useContext(InputContext);
+  const { setBuffer } = useContext(BufferContext);
   const handleClick = () => {
-    if (operationClicked) {
+    if (equalClicked) {
       dispatchInput(clearInput());
-      dispatchInput(appendNumber(number));
+      setBuffer('');
+      dispatchInput(appendSymbol(`${number}`));
+      setEqualClicked(false);
     } else {
-      dispatchInput(appendNumber(number));
+      dispatchInput(appendSymbol(`${number}`));
     }
-    setOperationClicked(false);
   };
 
   return (
@@ -27,6 +28,14 @@ const NumberButton = ({ number }) => {
       />
     </td>
   );
+};
+
+NumberButton.propTypes = {
+  number: PropTypes.number,
+};
+
+NumberButton.defaultProps = {
+  number: 0,
 };
 
 export { NumberButton as default };
