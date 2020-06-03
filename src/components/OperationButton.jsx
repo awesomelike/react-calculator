@@ -28,7 +28,7 @@ const OperationButton = ({ operation }) => {
 
       setBuffer(`${validInput}=`);
 
-      const expression = validInput.replace('×', '*');
+      const expression = validInput.replace(/[×]/g, '*');
 
       // eslint-disable-next-line no-eval
       dispatchInput(setInput(eval(expression)));
