@@ -30,10 +30,13 @@
   transition: all .8s;
 }
 
+.layout__rectange:hover .layout__logo, .layout__rectange.hover .layout__logo { animation: rotation 2s infinite linear; }
+
 .layout__logo {
-  animation: rotation 10s infinite linear;
+  animation: rotation 6s infinite linear;
   width: 25%;
   margin: 2rem;
+  transition: all 5s;
 }
 
 .logo-container {
