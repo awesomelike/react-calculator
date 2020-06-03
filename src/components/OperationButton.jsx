@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import InputContext from '../context/inputContext';
 import BufferContext from '../context/bufferContext';
 
@@ -27,6 +28,14 @@ const OperationButton = ({ operation }) => {
       />
     </td>
   );
+};
+
+OperationButton.defaultProps = {
+  operation: '+',
+};
+
+OperationButton.propTypes = {
+  operation: PropTypes.string,
 };
 
 export { OperationButton as default };
