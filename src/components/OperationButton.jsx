@@ -12,18 +12,26 @@ const OperationButton = ({ operation }) => {
   const { setBuffer } = useContext(BufferContext);
 
   const handleClick = () => {
+    const lastChar = input.slice(-1);
     if (operation !== '=') {
-      const lastChar = input.slice(-1);
       if (isOperation(lastChar) && lastChar !== operation) {
         dispatchInput(setInput(input.substring(0, input.length - 1) + operation));
       } else if (!isOperation(lastChar)) {
         dispatchInput(appendSymbol(operation));
       }
     } else {
-      setBuffer(`${input}=`);
+      const inputLength = input.length;
+      let validInput;
+      if (isOperation(input[inputLength - 1])) {
+        validInput = input.substring(0, input.length - 1);
+      } else validInput = input;
+
+      setBuffer(`${validInput}=`);
+
+      const expression = validInput.replace('×', '*');
 
       // eslint-disable-next-line no-eval
-      dispatchInput(setInput(eval(input.replace('×', '*'))));
+      dispatchInput(setInput(eval(expression)));
       setEqualClicked(true);
     }
     setOperationClicked(true);
