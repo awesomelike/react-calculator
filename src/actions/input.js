@@ -3,6 +3,10 @@ export const appendSymbol = (symbol) => ({
   symbol,
 });
 
+export const eraseOne = () => ({
+  type: 'ERASE_ONE',
+});
+
 export const setInput = (string) => ({
   type: 'SET_INPUT',
   string,

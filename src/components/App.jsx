@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 import NumberButton from './NumberButton';
 import OperationButton from './OperationButton';
 import InputContext from '../context/inputContext';
@@ -11,6 +11,13 @@ const App = () => {
   const [buffer, setBuffer] = useState('');
   const [operationClicked, setOperationClicked] = useState(false);
   const [equalClicked, setEqualClicked] = useState(false);
+
+  // useEffect(() => {
+  //   document.addEventListener('keydown', (e) => {
+  //     console.log(e);
+  //   });
+  // }, []);
+
   return (
     <InputContext.Provider value={{
       input,
@@ -27,7 +34,10 @@ const App = () => {
             <table className="table">
               <tr>
                 <td>
-                  <p className="buffer">{buffer}</p>
+                  <p className="buffer">
+                    {buffer}
+&nbsp;
+                  </p>
                 </td>
               </tr>
               <tr>
@@ -38,50 +48,49 @@ const App = () => {
                 </td>
               </tr>
               <tr>
-                <td>
-                  <input
-                    type="button"
-                    value="C"
-                    className="num-button"
-                    id="c-key"
-                    onClick={() => {
-                      dispatchInput(clearInput());
-                      setBuffer('');
-                    }}
-                  />
-                </td>
-                {/* <td>
-									<OperationButton operation={'-'} />
-								</td> */}
-              </tr>
-              <tr>
                 <table className="button-table">
                   <tr>
-                    <NumberButton number={1} />
-                    <NumberButton number={2} />
-                    <NumberButton number={3} />
+                    <td>
+                      <input
+                        type="button"
+                        value="C"
+                        className="num-button"
+                        id="c-key"
+                        onClick={() => {
+                          dispatchInput(clearInput());
+                          setBuffer('');
+                        }}
+                      />
+                    </td>
                     <OperationButton operation="/" />
-                  </tr>
-                  <tr>
-                    <NumberButton number={4} />
-                    <NumberButton number={5} />
-                    <NumberButton number={6} />
                     <OperationButton operation="×" />
+                    <OperationButton operation="⌫" />
                   </tr>
                   <tr>
                     <NumberButton number={7} />
                     <NumberButton number={8} />
                     <NumberButton number={9} />
+                    <OperationButton operation="-" />
+                  </tr>
+                  <tr>
+                    <NumberButton number={4} />
+                    <NumberButton number={5} />
+                    <NumberButton number={6} />
                     <OperationButton operation="+" />
                   </tr>
                   <tr>
-                    <td>
+                    <NumberButton number={1} />
+                    <NumberButton number={2} />
+                    <NumberButton number={3} />
+                    <OperationButton operation="( )" />
+                  </tr>
+                  <tr>
+                    {/* <td>
                       <input type="button" value="+/-" className="num-button" />
-                    </td>
+                    </td> */}
+                    <OperationButton operation="+/-" />
                     <NumberButton number={0} />
-                    <td>
-                      <input type="button" value="." className="num-button" />
-                    </td>
+                    <NumberButton number="." />
                     <OperationButton operation="=" />
                   </tr>
                 </table>
