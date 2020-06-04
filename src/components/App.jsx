@@ -96,7 +96,7 @@ const App = () => {
                 </table>
               </tr>
               <img
-                src="logo192.png"
+                src="react-calculator/logo192.png"
                 alt="React logo"
                 className="layout__logo"
               />

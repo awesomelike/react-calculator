@@ -4,7 +4,7 @@ import InputContext from '../context/inputContext';
 import BufferContext from '../context/bufferContext';
 import { appendSymbol, setInput, eraseOne } from '../actions/input';
 import isOperation from '../util/operation';
-import isValid, { countOpenBrackets } from '../util/bracket';
+import isValid, { countOpenBrackets, countClosedBrackets } from '../util/bracket';
 
 const OperationButton = ({ operation }) => {
   const {
@@ -48,8 +48,8 @@ const OperationButton = ({ operation }) => {
           validInput = input.substring(0, inputLength - 1);
         } else validInput = input;
         if (!isValid(input)) {
-          const openBracketsCount = countOpenBrackets(input);
-          for (let i = 0; i < openBracketsCount; i += 1) validInput += ')';
+          const fillBracketsCount = countOpenBrackets(input) - countClosedBrackets(input);
+          for (let i = 0; i < fillBracketsCount; i += 1) validInput += ')';
         }
         setBuffer(`${validInput}=`);
 
