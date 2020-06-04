@@ -30,6 +30,6 @@ input[type=button] {
 }
 
 #c-key {
-  width: 100%;
+  max-width: 100%;
   @include button-op;
 }
