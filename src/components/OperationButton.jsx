@@ -8,12 +8,16 @@ import isValid, { countOpenBrackets } from '../util/bracket';
 
 const OperationButton = ({ operation }) => {
   const {
-    input, dispatchInput, setOperationClicked, setEqualClicked,
+    input, dispatchInput, setOperationClicked, equalClicked, setEqualClicked,
   } = useContext(InputContext);
   const { setBuffer } = useContext(BufferContext);
 
   const handleClick = () => {
-    const lastChar = input.slice(-1);
+    if (equalClicked) {
+      setEqualClicked(false);
+      setBuffer('');
+    }
+    const lastChar = `${input}`.slice(-1);
     if (operation === '⌫') {
       dispatchInput(eraseOne());
     } else if (operation === '( )') {
@@ -49,7 +53,7 @@ const OperationButton = ({ operation }) => {
         }
         setBuffer(`${validInput}=`);
 
-        const expression = validInput.replace(/[×]/g, '*');
+        const expression = `${validInput}`.replace(/[×]/g, '*');
 
         // eslint-disable-next-line no-eval
         dispatchInput(setInput(eval(expression)));
