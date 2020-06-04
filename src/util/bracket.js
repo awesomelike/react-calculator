@@ -7,5 +7,8 @@ const isValid = (input) => {
 };
 
 const countOpenBrackets = (input) => `${input}`.match(/[(]/g).length;
-const countClosedBrackets = (input) => `${input}`.match(/[)]/g).length;
+const countClosedBrackets = (input) => {
+  const match = `${input}`.match(/[)]/g);
+  return (match !== null ? match.length : 0);
+};
 export { isValid as default, countOpenBrackets, countClosedBrackets };
