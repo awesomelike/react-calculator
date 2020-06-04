@@ -12,8 +12,10 @@ const inputReducer = (state, action) => {
         return `${action.symbol}`;
       } return ` ${state + action.symbol}`.trim();
     }
-    case 'ERASE_ONE':
-      return state === '0' || state.length === 1 ? '0' : state.substring(0, state.length - 1);
+    case 'ERASE_ONE': {
+      const stateLength = `${state}`.length;
+      return `${state}` === '0' || stateLength === 1 ? '0' : `${state}`.substring(0, stateLength - 1);
+    }
     case 'SET_INPUT':
       return action.string;
     case 'CLEAR_INPUT':
