@@ -1,5 +1,4 @@
 const isValid = (input) => {
-  console.log(input);
   const openBrackets = `${input}`.match(/[(]/g);
   const closedBrackets = `${input}`.match(/[)]/g);
   if (!openBrackets) return true;
