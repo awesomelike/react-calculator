@@ -85,9 +85,6 @@ const App = () => {
                     <OperationButton operation="( )" />
                   </tr>
                   <tr>
-                    {/* <td>
-                      <input type="button" value="+/-" className="num-button" />
-                    </td> */}
                     <OperationButton operation="+/-" />
                     <NumberButton number={0} />
                     <NumberButton number="." />
@@ -101,6 +98,10 @@ const App = () => {
                 className="layout__logo"
               />
             </table>
+          </div>
+          <div className="github-container">
+            <img src="react-calculator/github.png" className="github-container__logo" alt="Github logo" />
+            <a href="https://github.com/awesomelike" className="github-container__link">@awesomelike</a>
           </div>
         </div>
       </BufferContext.Provider>

@@ -10,7 +10,7 @@
 }
 
 .layout__rectange {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
+  background: $primary-gradient;
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
@@ -62,4 +62,41 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 3rem;
+}
+
+.github-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 5px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary-gradient;
+  text-align: center;
+  
+  &__logo {
+    width: 3rem;
+    margin: 5px;
+    @media (max-width: $desktop-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: white;
+    margin-right: 4px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 0.7;
+    transition: all .2s;
+
+    &:hover {
+      opacity: 1;
+      transition: all .2s;
+    }
+  }
 }
