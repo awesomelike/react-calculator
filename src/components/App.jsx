@@ -1,10 +1,11 @@
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useReducer, useState } from 'react';
 import NumberButton from './NumberButton';
 import OperationButton from './OperationButton';
 import InputContext from '../context/inputContext';
 import BufferContext from '../context/bufferContext';
 import { clearInput } from '../actions/input';
 import inputReducer from '../reducers/inputReducer';
+import Buffer from './Buffer';
 
 const App = () => {
   const [input, dispatchInput] = useReducer(inputReducer, '0');
@@ -33,12 +34,7 @@ const App = () => {
           <div className="layout__rectange">
             <table className="table">
               <tr>
-                <td>
-                  <p className="buffer">
-                    {buffer}
-&nbsp;
-                  </p>
-                </td>
+                {buffer && <Buffer buffer={buffer} />}
               </tr>
               <tr>
                 <td>
