@@ -31,6 +31,7 @@ const OperationButton = ({ operation }) => {
       } else if (!isPaired) dispatchInput(appendSymbol(')'));
     } else if (operation === '+/-') {
       if (input === '0') dispatchInput(setInput('(-'));
+      else if (parseInt(input, 10) < 0) dispatchInput(setInput(`${-1 * parseInt(input, 10)}`));
       else if (input === '(-') dispatchInput(setInput('0'));
       else if (isOperation(lastChar) || lastChar === '(') dispatchInput(appendSymbol('(-'));
       else dispatchInput(setInput(`(-${input}`));
