@@ -33,3 +33,28 @@ input[type=button] {
   max-width: 100%;
   @include button-op;
 }
+
+.button-background {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: $primary-gradient;
+  border: none;
+  outline: none;
+  color: rgb(236, 234, 234);
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all .6s;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: -10px 6px 20px rgba(114, 114, 114, 0.4);
+  &:hover {
+    transition: all .6s;
+    box-shadow: -10px 4px 20px rgba(255, 255, 255, 0.40);
+  }
+  &:active {
+    transform: translateY(1px);
+    transition: all .1s;
+  }
+}
