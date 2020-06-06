@@ -56,8 +56,11 @@ const OperationButton = ({ operation }) => {
 
         const expression = `${validInput}`.replace(/[×]/g, '*');
 
-        // eslint-disable-next-line no-eval
-        dispatchInput(setInput(eval(expression)));
+        try {
+          dispatchInput(setInput(eval(expression)));
+        } catch (error) {
+          dispatchInput(setInput('Wrong format!'));
+        }
         setEqualClicked(true);
       }
       setOperationClicked(true);

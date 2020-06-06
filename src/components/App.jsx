@@ -95,6 +95,7 @@ const App = () => {
               />
             </table>
           </div>
+          <button onClick={() => console.log('clicked')} className="button-background" type="button">Change background</button>
           <div className="github-container">
             <img src="react-calculator/github.png" className="github-container__logo" alt="Github logo" />
             <a href="https://github.com/awesomelike" className="github-container__link">@awesomelike</a>
