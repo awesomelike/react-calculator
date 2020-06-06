@@ -10,3 +10,13 @@
     transform: translateY(2px);
   }
 }
+
+@mixin container {
+  padding: 5px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary-gradient;
+  text-align: center;
+}
