@@ -11,7 +11,7 @@ const getRandomImage = () => new Promise((resolve, reject) => {
   axios.get(apiUrl)
     .then(({ data }) => {
       resolve({ urls: data.urls, user: data.user });
-      axios.get(downloadLocation(data.links.downloadLocation));
+      axios.get(downloadLocation(data.links.download_location));
     })
     .catch((error) => reject(error));
 });

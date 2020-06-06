@@ -36,10 +36,12 @@ const App = () => {
   }, [background, photographer]);
 
   const handleClick = async () => {
-    getRandomImage().then(({ urls, user }) => {
-      setBackground(urls.regular);
-      setPhotographer(user);
-    });
+    getRandomImage()
+      .then(({ urls, user }) => {
+        setBackground(urls.regular);
+        setPhotographer(user);
+      })
+      .catch(() => setBackground(defaultImage));
   };
   return (
     <InputContext.Provider value={{
