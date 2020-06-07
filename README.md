@@ -10,6 +10,8 @@ This project uses latest React features like Hooks, Fragments, and Context API f
 
 [![React Calculator v1.0.0](https://i.ibb.co/qpW9355/React-Calculator.png)](https://awesomelike.github.io/react-calculator/)
 
+[![React Calculator v1.0.0](https://i.ibb.co/Pmv7jkK/image-2020-06-06-19-48-13.png)](https://awesomelike.github.io/react-calculator/)
+
 ## Running the app locally
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 You must have [Nodejs](http://nodejs.org) and [NPM](http://npmjs.com) to get up and running.
