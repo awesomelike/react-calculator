@@ -14,6 +14,7 @@ This project uses latest React features like Hooks, Fragments, and Context API f
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 You must have [Nodejs](http://nodejs.org) and [NPM](http://npmjs.com) to get up and running.
 
-1. `npm install` to install the app dependencies.
-2. `npm start` to run the development server, thus the app.
-3. Have fun and solve some math :)
+1. Clone this repo.
+2. `npm install` to install the app dependencies.
+3. `npm start` to run the development server, thus the app.
+4. Have fun and solve some math :)
