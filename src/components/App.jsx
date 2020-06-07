@@ -24,8 +24,8 @@ const App = () => {
   const transitions = useTransition(isLoading, null, {
     from: { filter: 'blur(1rem)' },
     enter: { filter: 'blur(0)' },
-    leave: { filter: 'blur(1rem)' },
-    config: config.molasses,
+    // leave: { filter: 'blur(1rem)' },
+    // config: config.molasses,
   });
 
   const image = new Image();
@@ -55,6 +55,7 @@ const App = () => {
       })
       .catch(() => {
         setBackground(defaultImage);
+        setPhotographer(null);
         setLoading(false);
       });
   };
