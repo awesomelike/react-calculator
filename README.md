@@ -7,6 +7,7 @@ This project uses latest React features like Hooks, Fragments, and Context API f
 ## Features
 1. Fully functioning simple calculator, for the daily arithmetical calculations.
 2. An ability to randomly change the background image. Powered by the generous [Unsplash](https://unsplash.com/) API.
+
 [![React Calculator v1.0.0](https://i.ibb.co/qpW9355/React-Calculator.png)(https://awesomelike.github.io/react-calculator/)
 
 ## Running the app locally
