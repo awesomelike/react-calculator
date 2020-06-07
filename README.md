@@ -16,4 +16,4 @@ You must have [Nodejs](http://nodejs.org) and [NPM](http://npmjs.com) to get up 
 
 1. `npm install` to install the app dependencies.
 2. `npm start` to run the development server, thus the app.
-3. Have fun :)
+3. Have fun and solve some math :)
