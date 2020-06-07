@@ -1,7 +1,8 @@
 import React, { useReducer, useState, useEffect } from 'react';
-import { useTransition, animated, config } from 'react-spring';
+import { useTransition, config } from 'react-spring';
 import Calculator from './Calculator';
 import Photographer from './Photographer';
+import GithubContainer from './GithubContainer';
 import InputContext from '../context/inputContext';
 import BufferContext from '../context/bufferContext';
 import inputReducer from '../reducers/inputReducer';
@@ -17,13 +18,21 @@ const App = () => {
 
   const [background, setBackground] = useState(defaultImage);
   const [photographer, setPhotographer] = useState(null);
+  const [src, setSrc] = useState(null);
+  const [isLoading, setLoading] = useState(false);
 
-  const transitions = useTransition(background, null, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
+  const transitions = useTransition(isLoading, null, {
+    from: { filter: 'blur(1rem)' },
+    enter: { filter: 'blur(0)' },
+    leave: { filter: 'blur(1rem)' },
     config: config.molasses,
   });
+
+  const image = new Image();
+  image.onload = () => {
+    setBackground(src);
+    setLoading(false);
+  };
 
   useEffect(() => {
     const storedImage = JSON.parse(localStorage.getItem('image'));
@@ -35,14 +44,21 @@ const App = () => {
     localStorage.setItem('image', JSON.stringify({ background, photographer }));
   }, [background, photographer]);
 
+  useEffect(() => { image.src = src; }, [src]);
+
   const handleClick = async () => {
+    setLoading(true);
     getRandomImage()
       .then(({ urls, user }) => {
-        setBackground(urls.regular);
+        setSrc(urls.regular);
         setPhotographer(user);
       })
-      .catch(() => setBackground(defaultImage));
+      .catch(() => {
+        setBackground(defaultImage);
+        setLoading(false);
+      });
   };
+
   return (
     <InputContext.Provider value={{
       input,
@@ -51,21 +67,19 @@ const App = () => {
       setOperationClicked,
       equalClicked,
       setEqualClicked,
+      transitions,
+      isLoading,
     }}
     >
       <BufferContext.Provider value={{ buffer, setBuffer }}>
-        {transitions.map(({ props, key }) => (
-          <animated.div className="layout" key={key} style={{ ...props, backgroundImage: `url(${background})` }}>
-            <Calculator />
-            <button onClick={handleClick} className="button-background" type="button">Change background</button>
-            <Photographer photographer={photographer} />
-            <div className="github-container">
-              <img src="react-calculator/github.png" className="github-container__logo" alt="Github logo" />
-              <a href="https://github.com/awesomelike" className="github-container__link">@awesomelike</a>
-            </div>
-          </animated.div>
-        ))}
-
+        <div className="layout" style={{ backgroundImage: `url(${background})` }}>
+          <Calculator />
+          <button onClick={handleClick} className="button-background" type="button" disabled={isLoading}>
+            {!isLoading ? 'Change background' : 'Loading...'}
+          </button>
+          <Photographer photographer={photographer} />
+          <GithubContainer />
+        </div>
       </BufferContext.Provider>
     </InputContext.Provider>
   );
