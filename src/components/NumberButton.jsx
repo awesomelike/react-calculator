@@ -5,7 +5,9 @@ import BufferContext from '../context/bufferContext';
 import { appendSymbol, clearInput } from '../actions/input';
 
 const NumberButton = ({ number }) => {
-  const { dispatchInput, equalClicked, setEqualClicked } = useContext(InputContext);
+  const {
+    input, dispatchInput, equalClicked, setEqualClicked,
+  } = useContext(InputContext);
   const { setBuffer } = useContext(BufferContext);
   const handleClick = () => {
     if (equalClicked) {
