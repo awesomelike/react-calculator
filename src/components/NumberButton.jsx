@@ -6,7 +6,7 @@ import { appendSymbol, clearInput } from '../actions/input';
 
 const NumberButton = ({ number }) => {
   const {
-    input, dispatchInput, equalClicked, setEqualClicked,
+    dispatchInput, equalClicked, setEqualClicked,
   } = useContext(InputContext);
   const { setBuffer } = useContext(BufferContext);
   const handleClick = () => {
