@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.ibb.co/fxFZBvP/rc-snap.png" width="400"></p>
+<p align="center"><img src="https://i.ibb.co/fxFZBvP/rc-snap.png" width="600"></p>
 
 A beautiful [Calculator App](https://awesomelike.github.io/react-calculator/) (**that works**) made in React.
 
@@ -8,9 +8,9 @@ This project uses latest React features like Hooks, Fragments, and Context API f
 1. Fully functioning simple calculator, for the daily arithmetical calculations.
 2. An ability to randomly change the background image. Powered by the generous [Unsplash](https://unsplash.com/) API.
 
-<p align="center"><img src="https://i.ibb.co/qpW9355/React-Calculator.png" width="400"></p>
+<p align="center"><img src="https://i.ibb.co/qpW9355/React-Calculator.png" width="800"></p>
 
-<p align="center"><img src="https://i.ibb.co/Pmv7jkK/image-2020-06-06-19-48-13.png" width="400"></p>
+<p align="center"><img src="https://i.ibb.co/Pmv7jkK/image-2020-06-06-19-48-13.png" width="800"></p>
 
 ## Running the app locally
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
