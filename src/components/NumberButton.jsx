@@ -6,18 +6,17 @@ import { appendSymbol, clearInput } from '../actions/input';
 
 const NumberButton = ({ number }) => {
   const {
-    dispatchInput, equalClicked, setEqualClicked,
+    input, dispatchInput, equalClicked, setEqualClicked,
   } = useContext(InputContext);
   const { setBuffer } = useContext(BufferContext);
   const handleClick = () => {
+    const symbol = `${number}`;
     if (equalClicked) {
       dispatchInput(clearInput());
       setBuffer('');
-      dispatchInput(appendSymbol(`${number}`));
+      dispatchInput(appendSymbol(symbol));
       setEqualClicked(false);
-    } else {
-      dispatchInput(appendSymbol(`${number}`));
-    }
+    } else if (number !== '.' || input.substr(-1) !== '.') dispatchInput(appendSymbol(symbol));
   };
 
   return (
