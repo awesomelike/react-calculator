@@ -33,19 +33,6 @@ const App = () => {
     setBackground(src);
     setLoading(false);
   };
-
-  useEffect(() => {
-    const storedImage = JSON.parse(localStorage.getItem('image'));
-    setBackground(storedImage ? storedImage.background : defaultImage);
-    setPhotographer(storedImage ? storedImage.photographer : null);
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('image', JSON.stringify({ background, photographer }));
-  }, [background, photographer]);
-
-  useEffect(() => { image.src = src; }, [src]);
-
   const handleClick = async () => {
     setLoading(true);
     getRandomImage()
@@ -59,6 +46,18 @@ const App = () => {
         setLoading(false);
       });
   };
+
+  useEffect(() => {
+    const storedImage = JSON.parse(localStorage.getItem('image'));
+    setBackground(storedImage ? storedImage.background : defaultImage);
+    setPhotographer(storedImage ? storedImage.photographer : null);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('image', JSON.stringify({ background, photographer }));
+  }, [background, photographer]);
+
+  useEffect(() => { image.src = src; }, [src]);
 
   return (
     <InputContext.Provider value={{
