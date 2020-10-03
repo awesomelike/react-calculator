@@ -1,24 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import InputContext from '../context/inputContext';
-import BufferContext from '../context/bufferContext';
-import { appendSymbol, clearInput } from '../actions/input';
+import useNumberClick from '../hooks/useNumberClick';
+import useEqual from '../hooks/useEqual';
 
 const NumberButton = ({ number }) => {
-  const {
-    dispatchInput, equalClicked, setEqualClicked,
-  } = useContext(InputContext);
-  const { setBuffer } = useContext(BufferContext);
-  const handleClick = () => {
-    if (equalClicked) {
-      dispatchInput(clearInput());
-      setBuffer('');
-      dispatchInput(appendSymbol(`${number}`));
-      setEqualClicked(false);
-    } else {
-      dispatchInput(appendSymbol(`${number}`));
-    }
-  };
+  const handleClick = useNumberClick(number);
+  const equal = useEqual(number, handleClick);
 
   return (
     <td>
@@ -27,6 +14,9 @@ const NumberButton = ({ number }) => {
         onClick={handleClick}
         value={number}
         className="num-button"
+        style={equal ? {
+          backgroundColor: 'rgba(90, 90, 90, 0.527)',
+        } : {}}
       />
     </td>
   );
